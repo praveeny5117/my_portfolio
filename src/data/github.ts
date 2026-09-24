@@ -26,15 +26,15 @@ export interface GitHubStats {
 }
 
 export const githubProfileData: GitHubStats = {
-  name: "Praveen",
+  name: "Praveen Yonas",
   username: "praveeny5117",
   profileUrl: "https://github.com/praveeny5117",
   avatarUrl: "https://github.com/praveeny5117.png",
-  headline: "Lead Full Stack Engineer • Scaling Angular 18+, Node.js 22+ & MongoDB",
+  headline: "Full Stack Engineer • Angular, React, Node.js, MongoDB & AWS",
   location: "Kallakurichi, Tamil Nadu, India",
   totalRepos: 18,
   contributionsCount: "1,420+",
-  stackHighlights: ["Angular 18+", "Node.js 22+", "MongoDB 50% Speedup", "AWS EC2/S3", "WebSockets"]
+  stackHighlights: ["Angular", "React", "Node.js", "MongoDB", "AWS", "REST APIs"]
 };
 
 export const userRepositories: GitHubRepo[] = [

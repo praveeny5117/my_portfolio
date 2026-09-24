@@ -68,15 +68,37 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({
           ))}
         </div>
 
-        {/* Connecting Data Highway Visual */}
-        <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-center gap-2 text-xs font-mono text-zinc-400">
-          <span className="px-2 py-0.5 rounded bg-white/5 text-zinc-300">Client Tier</span>
-          <span>⟶</span>
-          <span className="px-2 py-0.5 rounded bg-white/5 text-cyan-300">Gateway (SSL/Nginx)</span>
-          <span>⟶</span>
-          <span className="px-2 py-0.5 rounded bg-white/5 text-blue-300">Node/PM2 Cluster</span>
-          <span>⟶</span>
-          <span className="px-2 py-0.5 rounded bg-white/5 text-emerald-300">MongoDB & AWS S3</span>
+        {/* Connecting Data Highway Visual with requested Tiered Cascade */}
+        <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
+          <div className="text-[11px] font-mono uppercase text-zinc-500 tracking-wider text-center">
+            END-TO-END EXECUTION CASCADE
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-mono">
+            <span className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white font-semibold flex items-center gap-1.5">
+              <span>Frontend</span>
+              <span className="text-[10px] text-zinc-400">(Angular / React)</span>
+            </span>
+            <span className="text-[#00F0FF] font-bold">↓</span>
+            <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-semibold flex items-center gap-1.5">
+              <span>API Layer</span>
+              <span className="text-[10px] text-zinc-400">(Nginx / SSL Gateway)</span>
+            </span>
+            <span className="text-[#00F0FF] font-bold">↓</span>
+            <span className="px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-300 font-semibold flex items-center gap-1.5">
+              <span>Node.js / Express</span>
+              <span className="text-[10px] text-zinc-400">(PM2 Cluster)</span>
+            </span>
+            <span className="text-[#00F0FF] font-bold">↓</span>
+            <span className="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold flex items-center gap-1.5">
+              <span>MongoDB</span>
+              <span className="text-[10px] text-zinc-400">(Indexed Cluster)</span>
+            </span>
+            <span className="text-[#00F0FF] font-bold">↓</span>
+            <span className="px-3 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300 font-semibold flex items-center gap-1.5">
+              <span>AWS</span>
+              <span className="text-[10px] text-zinc-400">(EC2, S3, Amplify)</span>
+            </span>
+          </div>
         </div>
       </div>
 

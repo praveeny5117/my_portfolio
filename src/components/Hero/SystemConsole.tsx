@@ -11,22 +11,22 @@ export const SystemConsole: React.FC = () => {
   const [history, setHistory] = useState<CommandHistory[]>([
     {
       command: 'whoami',
-      output: 'Praveen Y — Senior Full Stack & MEAN Stack Architect',
+      output: 'Praveen Yonas — Full Stack Engineer / Senior Full Stack Developer (5+ YOE)',
       isSuccess: true,
     },
     {
       command: 'stack --primary',
       output: [
-        '● Frontend: Angular 17+ • React 19 • TypeScript • PrimeNG • Tailwind CSS',
-        '● Backend:  Node.js • Express • REST APIs • JWT Auth',
-        '● Database: MongoDB • Aggregation Pipelines • Index Tuning',
-        '● Cloud:    AWS (EC2, S3, Amplify) • Nginx • PM2 • GitHub'
+        '● Frontend: Angular 18+ • React.js • TypeScript • JavaScript • Tailwind CSS',
+        '● Backend:  Node.js • Express.js • REST APIs • Microservices • JWT • RBAC',
+        '● Database: MongoDB Aggregation Pipelines • Compound Indexing • SQL',
+        '● Cloud:    AWS (EC2, S3, Amplify) • Nginx • PM2 • Git CI/CD'
       ],
       isSuccess: true,
     },
     {
       command: 'status --production',
-      output: '⚡ Operational. Available for scalable SaaS and enterprise architecture consulting.',
+      output: '⚡ Operational. Available for Senior Full Stack & Lead Engineering Roles.',
       isSuccess: true,
     }
   ]);
@@ -36,28 +36,28 @@ export const SystemConsole: React.FC = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   const commandCatalog: Record<string, string | string[]> = {
-    whoami: 'Praveen Y — Senior Full Stack & MEAN Stack Architect (5+ YOE)',
+    whoami: 'Praveen Yonas — Full Stack Engineer / Senior Full Stack Developer (5+ YOE)',
     stack: [
-      '⚡ Frontend: Angular 17+, React 19, TypeScript, PrimeNG, Tailwind',
-      '⚡ Backend: Node.js, Express.js, High-Throughput REST APIs, JWT',
-      '⚡ Database: MongoDB, Mongoose, Complex Aggregations, Indexing',
+      '⚡ Frontend: Angular 18+, React.js, TypeScript, PrimeNG, Tailwind CSS',
+      '⚡ Backend: Node.js, Express.js, High-Throughput REST APIs, Microservices, JWT',
+      '⚡ Database: MongoDB, Aggregation Pipelines, Compound Indexing, SQL',
       '⚡ Cloud & DevOps: AWS EC2, S3, Amplify, Nginx Reverse Proxy, PM2'
     ],
-    status: '● Available for technical leadership, enterprise consulting & full-time roles.',
+    status: '● Available for technical leadership, enterprise consulting & full-time senior engineering roles.',
     arch: [
-      '┌─ Tier 1: Angular / React SPAs with RxJS & PrimeNG',
-      '├─ Tier 2: Nginx SSL Terminator & Rate Limiter',
+      '┌─ Tier 1: Angular / React SPAs with RxJS & PrimeNG Component Architecture',
+      '├─ Tier 2: Nginx SSL Terminator & Rate Limiter Gateway',
       '├─ Tier 3: Node.js / Express PM2 Clustered Microservices',
-      '├─ Tier 4: MongoDB Sharded Cluster with Compound Indices',
+      '├─ Tier 4: MongoDB Compound-Indexed Cluster (-50% Latency Optimization)',
       '└─ Tier 5: AWS S3 Encrypted Presigned Document Vault'
     ],
     metrics: [
       'Uptime: 99.98% across AWS deployments',
-      'Production Systems Shipped: 24+',
-      'Peak Query Acceleration: 4.2x with MongoDB indexing',
-      'Experience: 5+ Years in Full Stack Engineering'
+      'Production Systems Shipped: 20+',
+      'Peak Query Acceleration: 50% response speed boost with MongoDB indexing',
+      'Experience: 5+ Years in Full Stack Software Engineering'
     ],
-    contact: 'Email: praveeny5117@gmail.com | LinkedIn: /in/praveen-y-751125178 | GitHub: praveeny5117',
+    contact: 'Email: yonaspraveen@gmail.com | Phone: +91 96268 30829 | LinkedIn: /in/praveen-y-751125178 | GitHub: praveeny5117',
     clear: '__CLEAR__'
   };
 

@@ -1,39 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Server, Database, Cloud, Zap, Shield, GitMerge, GraduationCap, MapPin, Phone, Mail } from 'lucide-react';
+import { Layers, Server, Database, Cloud, Zap, Shield, GraduationCap, MapPin, Phone, Mail, Terminal } from 'lucide-react';
 import { developerData } from '../../data/developer';
 
 export const About: React.FC = () => {
-  const domains = [
+  const engineeringPillars = [
     { 
-      title: "Real Estate Sourcing Platforms", 
-      desc: "Architecting high-scale sourcing platforms with decoupled microservices, role-based workflows, and real-time property data pipelines.", 
+      title: "Full-Stack Development", 
+      desc: "Engineering modern, decoupled web applications using Angular 18+, React.js, TypeScript, and Node.js with high maintainability.", 
       icon: Layers 
     },
     { 
-      title: "Healthcare Data Management", 
-      desc: "Secure clinical records management, encrypted data vaults, privacy compliance standards, and resilient audit logging.", 
+      title: "Enterprise Applications & Workflows", 
+      desc: "Delivering mission-critical enterprise systems, role-based workflows, and reusable frontend component design systems.", 
       icon: Shield 
     },
     { 
-      title: "Retail Analytics (AI-Driven)", 
-      desc: "Connecting computer vision and real-time event analytics streams to responsive Angular dashboards with sub-second data propagation.", 
-      icon: Zap 
-    },
-    { 
-      title: "MongoDB & Indexing Optimization", 
-      desc: "Achieved a proven 50% improvement in application response times through aggregation re-architecture and compound index redesign.", 
-      icon: Database 
-    },
-    { 
-      title: "MSSQL to MongoDB Migration", 
-      desc: "Led complete data layer modernization from legacy .NET / MSSQL stacks to scalable MongoDB architectures with minimal downtime.", 
+      title: "API Development & Microservices", 
+      desc: "Designing high-throughput REST APIs, JWT authentication, granular RBAC, and resilient inter-service communication.", 
       icon: Server 
     },
     { 
-      title: "AWS Cloud & CI/CD Delivery", 
-      desc: "Deploying production workloads on AWS (EC2, S3, Amplify) with PM2 clustering, Nginx reverse proxy, and Git/Bitbucket automated pipelines.", 
+      title: "Database Optimization", 
+      desc: "Achieved a 50% application response speed improvement through MongoDB aggregation pipeline re-architecture and compound indexing.", 
+      icon: Database 
+    },
+    { 
+      title: "Cloud Deployment (AWS)", 
+      desc: "Deploying and managing production workloads on AWS (EC2, S3, Amplify) with PM2 clustering, Nginx reverse proxies, and CI/CD pipelines.", 
       icon: Cloud 
+    },
+    { 
+      title: "SaaS Product Development", 
+      desc: "Architecting a multi-tenant School Management SaaS platform featuring zero-leakage data isolation and automated payment reconciliation.", 
+      icon: Zap 
     }
   ];
 
@@ -54,18 +54,22 @@ export const About: React.FC = () => {
           >
             <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-[#00F0FF] uppercase">
               <span className="w-6 h-[1px] bg-[#00F0FF]" />
-              <span>Lead Engineer Profile</span>
+              <span>Professional Introduction</span>
             </div>
 
             <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white dark:text-white light:text-zinc-950 leading-[1.15]">
-              Engineering impact <br />
+              Designing, building & <br />
               <span className="text-zinc-400 dark:text-zinc-400 light:text-zinc-500 font-light italic">
-                driven by measurable results.
+                deploying production systems.
               </span>
             </h2>
 
-            <p className="text-sm sm:text-base text-zinc-400 dark:text-zinc-400 light:text-zinc-600 leading-relaxed font-sans">
-              Results-driven Lead Full Stack Engineer with 5.5+ years of experience designing, building, and leading delivery of scalable web applications across Real Estate, Retail Analytics, and Healthcare Data Management.
+            <p className="text-sm sm:text-base text-zinc-300 dark:text-zinc-300 light:text-zinc-700 leading-relaxed font-sans">
+              I am a Full Stack Engineer with 5+ years of software development experience specializing in Angular, React, TypeScript, Node.js, Express, MongoDB, and AWS.
+            </p>
+
+            <p className="text-xs sm:text-sm text-zinc-400 dark:text-zinc-400 light:text-zinc-600 leading-relaxed font-sans">
+              I specialize in enterprise applications, workflow platforms, REST APIs, cloud deployments, database optimization, and full-stack SaaS product development. My engineering philosophy centers on clean architecture, high database throughput, zero data leaks, and production resilience.
             </p>
 
             {/* Quick Contact & Location Badges */}
@@ -76,7 +80,7 @@ export const About: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <a href={`tel:${developerData.phone}`} className="hover:text-[#00F0FF] transition-colors">{developerData.phone}</a>
+                <a href={`tel:${developerData.phone.replace(/\s+/g, '')}`} className="hover:text-[#00F0FF] transition-colors">{developerData.phone}</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
@@ -84,14 +88,14 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            {/* Leadership highlight */}
+            {/* Engineering Values Callout */}
             <div className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-white/5 dark:border-white/5 light:border-zinc-200">
               <div className="flex items-center gap-2 text-xs font-mono text-[#00F0FF] font-semibold mb-1">
-                <GitMerge className="w-4 h-4" />
-                <span>Technical Leadership & Mentorship</span>
+                <Terminal className="w-4 h-4" />
+                <span>Senior Engineering Perspective</span>
               </div>
               <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 leading-relaxed">
-                Experienced people leader who mentors engineers, enforces code quality through structured peer reviews, and translates business requirements into secure, production-grade technical solutions.
+                "I don't just write code. I design, build, optimize and deploy production-ready systems that scale reliably in high-concurrency environments."
               </p>
             </div>
           </motion.div>
@@ -105,7 +109,7 @@ export const About: React.FC = () => {
             className="lg:col-span-7 space-y-8"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {domains.map((item, idx) => {
+              {engineeringPillars.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div

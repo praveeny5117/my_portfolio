@@ -60,13 +60,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
               <a
                 href="#"
                 className="group flex items-center gap-2.5 font-heading text-lg font-bold tracking-tight text-white dark:text-white light:text-zinc-900 transition-colors"
-                aria-label="Praveen Y Portfolio Home"
+                aria-label="Praveen Yonas Portfolio Home"
               >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 group-hover:border-[#00F0FF]/50 transition-colors">
                   <Terminal className="w-4 h-4 text-[#00F0FF]" />
                 </div>
                 <span className="flex items-center tracking-wider">
-                  PRAVEEN<span className="text-[#00F0FF] font-mono">.Y</span>
+                  PRAVEEN<span className="text-[#00F0FF] font-mono">.YONAS</span>
                 </span>
               </a>
 

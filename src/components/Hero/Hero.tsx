@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, CheckCircle2 } from 'lucide-react';
+import { ArrowDown, Download, MessageSquare, Terminal } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { SystemConsole } from './SystemConsole';
 import { developerData } from '../../data/developer';
@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
     // Initiate download
     const link = document.createElement('a');
     link.href = developerData.resumeUrl;
-    link.download = 'Praveen_Y_Full_Stack_Resume.pdf';
+    link.download = 'Praveen_Yonas_Full_Stack_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -27,6 +27,19 @@ export const Hero: React.FC = () => {
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const techBadges = [
+    { name: 'Angular', color: 'text-red-400 border-red-500/20 bg-red-500/5' },
+    { name: 'React', color: 'text-cyan-400 border-cyan-500/20 bg-cyan-500/5' },
+    { name: 'TypeScript', color: 'text-blue-400 border-blue-500/20 bg-blue-500/5' },
+    { name: 'Node.js', color: 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5' },
+    { name: 'MongoDB', color: 'text-green-400 border-green-500/20 bg-green-500/5' },
+    { name: 'AWS', color: 'text-amber-400 border-amber-500/20 bg-amber-500/5' }
+  ];
 
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -41,68 +54,84 @@ export const Hero: React.FC = () => {
             className="lg:col-span-7 flex flex-col justify-center space-y-6"
           >
             {/* Engineer Identity Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 w-fit">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 w-fit">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F0FF] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F0FF]"></span>
               </span>
-              <span className="text-xs font-mono tracking-wider uppercase text-zinc-300 dark:text-zinc-300 light:text-zinc-700">
-                Senior Full Stack & MEAN Architect
+              <span className="text-xs font-mono font-semibold tracking-wider uppercase text-zinc-200 dark:text-zinc-200 light:text-zinc-800">
+                FULL STACK ENGINEER
               </span>
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-1">
-              <h1 className="font-heading text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-white dark:text-white light:text-zinc-950 uppercase leading-[1.05]">
-                BUILDING <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 dark:from-white dark:via-zinc-200 dark:to-zinc-500 light:from-zinc-900 light:via-zinc-700 light:to-zinc-500">
-                  DIGITAL SYSTEMS
-                </span> <br />
+            <div className="space-y-2">
+              <h1 className="font-heading text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-white dark:text-white light:text-zinc-950 leading-[1.12]">
+                Building Scalable Web Applications & <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-cyan-300 to-blue-500">
-                  THAT SCALE.
+                  Enterprise Platforms
                 </span>
               </h1>
             </div>
 
             {/* Supporting Text */}
-            <p className="text-base sm:text-lg text-zinc-400 dark:text-zinc-400 light:text-zinc-600 max-w-2xl leading-relaxed font-sans font-normal">
-              Full Stack Developer specializing in modern web applications, enterprise workflows, SaaS platforms, and scalable backend systems. Building with high concurrency, clean architecture, and cloud resilience.
+            <p className="text-base sm:text-lg text-zinc-300 dark:text-zinc-300 light:text-zinc-600 max-w-2xl leading-relaxed font-sans">
+              Full Stack Engineer specializing in Angular, React, Node.js, MongoDB and AWS. I build production-ready applications, APIs and cloud solutions with a focus on performance, scalability and maintainability.
             </p>
 
+            {/* Technology Badges */}
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              {techBadges.map((badge) => (
+                <span
+                  key={badge.name}
+                  className={`px-3 py-1 rounded-lg text-xs font-mono font-medium border ${badge.color}`}
+                >
+                  {badge.name}
+                </span>
+              ))}
+            </div>
+
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <button
                 onClick={scrollToProjects}
-                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-white dark:bg-white light:bg-zinc-950 text-black dark:text-black light:text-white font-semibold text-sm hover:bg-[#00F0FF] dark:hover:bg-[#00F0FF] light:hover:bg-zinc-800 transition-all duration-200 shadow-lg hover:shadow-glow-accent hover:-translate-y-0.5 active:translate-y-0"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-white light:bg-zinc-950 text-black dark:text-black light:text-white font-semibold text-sm hover:bg-[#00F0FF] dark:hover:bg-[#00F0FF] light:hover:bg-zinc-800 transition-all duration-200 shadow-lg hover:shadow-glow-accent hover:-translate-y-0.5 active:translate-y-0"
               >
-                <span>Explore My Work</span>
+                <span>View Projects</span>
                 <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
               </button>
 
               <button
                 onClick={handleDownloadResume}
-                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-white/[0.05] dark:bg-white/[0.05] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 text-zinc-200 dark:text-zinc-200 light:text-zinc-800 font-semibold text-sm hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-zinc-200 hover:border-white/20 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="group inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/[0.05] dark:bg-white/[0.05] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 text-zinc-200 dark:text-zinc-200 light:text-zinc-800 font-semibold text-sm hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-zinc-200 hover:border-white/20 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Download className="w-4 h-4 text-[#00F0FF] group-hover:scale-110 transition-transform" />
                 <span>Download Resume</span>
               </button>
+
+              <button
+                onClick={scrollToContact}
+                className="group inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-zinc-50 border border-white/10 dark:border-white/10 light:border-zinc-300 text-zinc-300 dark:text-zinc-300 light:text-zinc-700 font-semibold text-sm hover:text-[#00F0FF] hover:border-[#00F0FF]/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <MessageSquare className="w-4 h-4 text-[#00F0FF] group-hover:scale-110 transition-transform" />
+                <span>Let's Connect</span>
+              </button>
             </div>
 
-            {/* Engineering Highlights / Badges */}
-            <div className="pt-6 border-t border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {developerData.heroTags.map((tag, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2 p-2.5 rounded-lg bg-zinc-950/60 dark:bg-zinc-950/60 light:bg-zinc-100/80 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 text-xs font-mono"
-                  >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#00F0FF] shrink-0" />
-                    <span className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700 font-medium truncate">
-                      {tag}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            {/* Engineering Credential Highlights */}
+            <div className="pt-4 border-t border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200 text-xs font-mono text-zinc-400 flex flex-wrap items-center gap-4">
+              <span className="flex items-center gap-1.5 text-zinc-300 dark:text-zinc-300 light:text-zinc-700">
+                <Terminal className="w-3.5 h-3.5 text-[#00F0FF]" />
+                5+ Years Hands-on Development
+              </span>
+              <span>•</span>
+              <span className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700">
+                Multi-Tenant SaaS
+              </span>
+              <span>•</span>
+              <span className="text-emerald-400">
+                50% Latency Optimization
+              </span>
             </div>
           </motion.div>
 

@@ -35,12 +35,12 @@ export const experienceData: ExperienceItem[] = [
       "Bitbucket & Jira"
     ],
     keyContributions: [
-      "Re-architected MongoDB query logic and indexing strategy, boosting overall application response speed by 50% and materially improving user experience.",
-      "Led migration of a legacy .NET application's data layer to MongoDB, together with a full MSSQL-to-MongoDB database migration with minimal downtime.",
-      "Integrated a microservices-based architecture into the platform, improving modularity, scalability, and independent deployability of core services.",
-      "Led frontend and backend engineering teams end-to-end, mentoring engineers and enforcing coding standards through structured, recurring code reviews.",
-      "Designed RESTful APIs and integrated third-party services for cross-system data exchange while enforcing data security, privacy, and compliance standards.",
-      "Managed source control strategy and automated release pipelines using Git and Bitbucket."
+      "Designed and developed enterprise workflow applications using Angular, Node.js and MongoDB.",
+      "Optimized backend APIs and MongoDB queries to significantly reduce response time for large data exports by 50%.",
+      "Implemented reusable frontend components and modernized legacy UI components into standalone Angular architecture.",
+      "Worked on production deployments, AWS infrastructure (EC2, S3, Amplify) and API integrations with PM2 and Nginx.",
+      "Led migration of legacy .NET data layers to MongoDB, delivering a full MSSQL-to-MongoDB database migration with minimal downtime.",
+      "Integrated microservices architecture into the platform, improving modularity, scalability, and independent deployability."
     ],
     metrics: [
       { value: "50%", label: "Application Speed Boost" },

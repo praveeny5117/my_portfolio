@@ -19,10 +19,10 @@ export const Footer: React.FC = () => {
               <div className="w-7 h-7 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center">
                 <Terminal className="w-3.5 h-3.5 text-[#00F0FF]" />
               </div>
-              <span>PRAVEEN Y</span>
+              <span>PRAVEEN YONAS</span>
             </div>
             <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 max-w-sm font-sans">
-              Senior Full Stack & MEAN Stack Architect engineering high-throughput, resilient distributed systems.
+              Full Stack Engineer specializing in Angular, React, Node.js, MongoDB and AWS. Building scalable web applications, enterprise platforms & multi-tenant SaaS products.
             </p>
           </div>
 
@@ -56,11 +56,11 @@ export const Footer: React.FC = () => {
             <span>Designed & Built by </span>
             <span className="text-zinc-300 dark:text-zinc-300 light:text-zinc-800 font-semibold">{developerData.name}</span>
             <span className="mx-2">•</span>
-            <span>React • TypeScript • Node.js • MongoDB • AWS</span>
+            <span>Angular • React • Node.js • MongoDB • AWS</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-cyan-400/90 font-medium">Built with React ⚡</span>
+            <span className="text-cyan-400/90 font-medium">Production Ready ⚡</span>
             <span>© 2026 {developerData.name}. All rights reserved.</span>
           </div>
         </div>

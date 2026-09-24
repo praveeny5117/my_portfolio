@@ -33,24 +33,26 @@ export interface DeveloperProfile {
 }
 
 export const developerData: DeveloperProfile = {
-  name: "Praveen Y",
-  role: "Lead Full Stack Engineer",
-  tagline: "BUILDING DIGITAL SYSTEMS THAT SCALE.",
-  headline: "50% application response speed improvement through MongoDB query optimization and indexing redesign.",
-  subheadline: "5.5+ years designing, building, and leading delivery of scalable web applications across Real Estate Sourcing, Retail Analytics, and Healthcare Data Management.",
+  name: "Praveen Yonas",
+  role: "Full Stack Engineer / Senior Full Stack Developer",
+  tagline: "DESIGN. BUILD. OPTIMIZE. DEPLOY.",
+  headline: "Building Scalable Web Applications & Enterprise Platforms",
+  subheadline: "Full Stack Engineer specializing in Angular, React, Node.js, MongoDB and AWS. I build production-ready applications, APIs and cloud solutions with a focus on performance, scalability and maintainability.",
   location: "Kallakurichi, Tamil Nadu, India",
   phone: "+91 96268 30829",
   email: "yonaspraveen@gmail.com",
-  status: "Available for Lead & Senior Engineering Roles",
-  experienceYears: "5.5+",
-  experienceCount: 5.5,
-  completedProjects: "24+",
+  status: "Available for Senior Full Stack & Lead Engineering Roles",
+  experienceYears: "5+ Years",
+  experienceCount: 5,
+  completedProjects: "20+",
   coreTechCount: "12+",
   heroTags: [
-    "5.5+ Years Experience",
-    "Lead Full Stack Engineer",
-    "Angular 18+ & Node.js 22+",
-    "MongoDB Query Optimization"
+    "Angular",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "MongoDB",
+    "AWS"
   ],
   resumeUrl: "/Praveen.pdf",
   education: [
@@ -69,41 +71,41 @@ export const developerData: DeveloperProfile = {
   ],
   stats: [
     {
+      value: "5+ Years",
+      label: "Software Development Experience",
+      subtext: "Delivering enterprise workflows, APIs, and cloud-native SaaS systems"
+    },
+    {
       value: "50%",
-      label: "Speed Improvement",
-      subtext: "Achieved via MongoDB query logic & indexing redesign"
+      label: "API Response Speed Boost",
+      subtext: "Achieved via MongoDB aggregation redesign and compound indexing"
     },
     {
-      value: "5.5+",
-      label: "Years Experience",
-      subtext: "Delivering real estate, retail analytics & healthcare platforms"
+      value: "Multi-Tenant",
+      label: "SaaS Product Architecture",
+      subtext: "Building School ERP with strict tenant isolation, RBAC & payment automations"
     },
     {
-      value: "100%",
-      label: "MSSQL to Mongo Migration",
-      subtext: "Successfully led legacy data layer modernization with minimal downtime"
-    },
-    {
-      value: "18+ / 22+",
-      label: "Angular & Node Versions",
-      subtext: "Modern standalone architecture & high-throughput REST APIs"
+      value: "99.98%",
+      label: "Deployment Availability",
+      subtext: "Production AWS EC2, S3, PM2 process management & Nginx reverse proxies"
     }
   ],
   terminalCommands: [
-    { command: "whoami", output: "Praveen Y — Lead Full Stack Engineer (5.5+ YOE) | Kallakurichi, Tamil Nadu, India" },
-    { command: "stack --core", output: [
-      "● Frontend: Angular 18+, TypeScript, PrimeNG, Tailwind CSS, HTML5/CSS3",
-      "● Backend:  Node.js 22+, Express.js, RESTful API Design, Microservices",
-      "● Database: MongoDB (Aggregation & Indexing), MSSQL, PostgreSQL, Data Migration",
-      "● Cloud:    AWS (EC2, S3, Amplify), Nginx, PM2, CI/CD Automated Pipelines"
+    { command: "whoami", output: "Praveen Yonas — Full Stack Engineer / Senior Full Stack Developer (5+ YOE) | Kallakurichi, TN, India" },
+    { command: "stack --primary", output: [
+      "● Frontend: Angular 18+, React.js, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS",
+      "● Backend:  Node.js, Express.js, REST APIs, Microservices, JWT Auth, RBAC",
+      "● Database: MongoDB (Aggregation Pipelines & Indexing), SQL, Data Modeling",
+      "● Cloud:    AWS (EC2, S3, Amplify), PM2, Nginx, Git, CI/CD Automated Pipelines"
     ] },
-    { command: "impact --stats", output: [
-      "⚡ 50% application response time reduction via MongoDB query redesign",
-      "⚡ Full legacy .NET data layer & MSSQL-to-MongoDB migration delivered with minimal downtime",
-      "⚡ Microservices architecture integration for independent deployability",
-      "⚡ Mentored teams, enforced structured code reviews, and delivered production systems"
+    { command: "impact --summary", output: [
+      "⚡ 50% application response speed improvement through MongoDB query optimization and indexing redesign",
+      "⚡ Architected multi-tenant School ERP SaaS with zero-leakage data isolation and automated fee reconciliation",
+      "⚡ Modernized enterprise workflow applications with reusable frontend components and microservice integrations",
+      "⚡ Maintained 99.98% production uptime across AWS cloud deployments"
     ] },
-    { command: "status", output: "● Available for technical leadership and senior engineering engagements", highlight: true },
-    { command: "contact", output: "Email: yonaspraveen@gmail.com | Phone: +91 96268 30829 | LinkedIn: linkedin.com/in/praveen-y" }
+    { command: "status", output: "● Available for Full-Time Senior / Lead Roles and Scalable Contract Engagements", highlight: true },
+    { command: "contact", output: "Email: yonaspraveen@gmail.com | Phone: +91 96268 30829 | LinkedIn: linkedin.com/in/praveen-y-751125178" }
   ]
 };
