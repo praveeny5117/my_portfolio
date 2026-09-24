@@ -3,73 +3,87 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="canonical" href="https://praveeny.vercel.app/" />
-  <meta property="og:url" content="https://praveeny.vercel.app/" />
-  <meta property="twitter:url" content="https://praveeny.vercel.app/" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://praveeny.vercel.app/" />
+
+  <!-- Favicon for Google Search & Browsers -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/profile.png" />
 
   <!-- Primary Meta Tags -->
-  <title>Praveen Y | Senior Full Stack & MEAN Stack Engineer</title>
-  <meta name="title" content="Praveen Y | Senior Full Stack & MEAN Stack Engineer" />
+  <title>Praveen's Portfolio | Senior Full Stack Engineer</title>
+  <meta name="title" content="Praveen's Portfolio | Senior Full Stack Engineer" />
   <meta name="description"
-    content="Senior Full Stack Engineer specializing in Angular, React, Node.js, Express, MongoDB, AWS, and enterprise SaaS platforms. Building high-throughput digital systems that scale." />
+    content="Portfolio of Praveen Y — Senior Full Stack & MEAN Stack Engineer. Projects, experience, open source contributions, and scalable cloud systems." />
   <meta name="keywords"
-    content="Praveen Y, Full Stack Developer, MEAN Stack, Angular, React, Node.js, MongoDB, AWS, Software Architect, TypeScript, Express.js, Enterprise SaaS" />
+    content="Praveen, Praveen Y, Praveen Portfolio, Full Stack Developer, MEAN Stack, Angular, React, Node.js, MongoDB, AWS, Software Engineer" />
   <meta name="author" content="Praveen Y" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#050505" />
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Praveen's Portfolio" />
+  <meta property="og:url" content="https://praveeny.vercel.app/" />
+  <meta property="og:title" content="Praveen's Portfolio | Senior Full Stack Engineer" />
+  <meta property="og:description"
+    content="Portfolio of Praveen Y — Senior Full Stack & MEAN Stack Engineer. Projects, experience, and system architecture." />
+  <meta property="og:image" content="https://praveeny.vercel.app/profile.png" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://praveeny.vercel.app/" />
-    <meta property="og:title" content="Praveen Y | Senior Full Stack & MEAN Stack Engineer" />
-    <meta property="og:description"
-      content="Specializing in Angular, React, Node.js, Express, MongoDB, AWS, and enterprise SaaS platforms." />
-    <meta property="og:image" content="/og-preview.png" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:url" content="https://praveeny.vercel.app/" />
+  <meta property="twitter:title" content="Praveen's Portfolio | Senior Full Stack Engineer" />
+  <meta property="twitter:description"
+    content="Portfolio of Praveen Y — Senior Full Stack & MEAN Stack Engineer. Projects, experience, and system architecture." />
+  <meta property="twitter:image" content="https://praveeny.vercel.app/profile.png" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://praveeny.vercel.app/" />
-    <meta property="twitter:title" content="Praveen Y | Senior Full Stack & MEAN Stack Engineer" />
-    <meta property="twitter:description"
-      content="Specializing in Angular, React, Node.js, Express, MongoDB, AWS, and enterprise SaaS platforms." />
-    <meta property="twitter:image" content="/og-preview.png" />
+  <!-- Google Fonts Preconnect & Load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Google Fonts Preconnect & Load -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
-
-    <!-- JSON-LD Structured Data for Person / Engineer -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Praveen Y",
-      "jobTitle": "Senior Full Stack & MEAN Stack Engineer",
-      "knowsAbout": [
-        "React",
-        "Angular",
-        "TypeScript",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "AWS Cloud Architecture",
-        "SaaS System Design",
-        "REST API Architecture",
-        "Enterprise Workflows"
-      ],
-      "url": "https://praveeny.vercel.app/",
-      "sameAs": [
-        "https://github.com/praveeny5117",
-        "https://www.linkedin.com/in/praveen-y-751125178/"
-      ]
-    }
-    </script>
+  <!-- JSON-LD Structured Data for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://praveeny.vercel.app/#website",
+        "url": "https://praveeny.vercel.app/",
+        "name": "Praveen's Portfolio",
+        "description": "Portfolio of Praveen Y — Senior Full Stack & MEAN Stack Engineer.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://praveeny.vercel.app/#person",
+        "name": "Praveen Y",
+        "url": "https://praveeny.vercel.app/",
+        "image": "https://praveeny.vercel.app/profile.png",
+        "jobTitle": "Senior Full Stack & MEAN Stack Engineer",
+        "knowsAbout": [
+          "React",
+          "Angular",
+          "TypeScript",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "AWS Cloud Architecture",
+          "SaaS System Design"
+        ],
+        "sameAs": [
+          "https://github.com/praveeny5117",
+          "https://www.linkedin.com/in/praveen-y-751125178/"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Theme Initializer - Default to Dark Theme -->
   <script>
