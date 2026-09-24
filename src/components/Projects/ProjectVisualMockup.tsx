@@ -1,6 +1,6 @@
 import React from 'react';
-import { 
-  Building2, CheckCircle2, ArrowRight, Activity, Stethoscope, UtensilsCrossed, Bell, ShieldCheck, Clock
+import {
+  Building2, CheckCircle2, ArrowRight, Stethoscope, UtensilsCrossed, ShieldCheck
 } from 'lucide-react';
 
 interface ProjectVisualMockupProps {
