@@ -4,7 +4,7 @@ import {
   Layers, Atom, Code2, Server, Database, Cloud, 
   CreditCard, Mail, Share2, Shield, RefreshCw, GitBranch, 
   FileCode, Sparkles, Filter, Zap, LayoutGrid, HardDrive, 
-  CloudLightning, Network, ShieldCheck, Globe
+  CloudLightning, Network, ShieldCheck, Globe, Radio, Webhook, MessageSquare
 } from 'lucide-react';
 import { skillCategories } from '../../data/skills';
 import type { SkillItem } from '../../data/skills';
@@ -42,6 +42,9 @@ export const Skills: React.FC = () => {
       case 'CreditCard': return <CreditCard {...props} />;
       case 'Mail': return <Mail {...props} />;
       case 'Share2': return <Share2 {...props} />;
+      case 'Radio': return <Radio {...props} />;
+      case 'Webhook': return <Webhook {...props} />;
+      case 'MessageSquare': return <MessageSquare {...props} />;
       default: return <Code2 {...props} />;
     }
   };
@@ -127,27 +130,28 @@ export const Skills: React.FC = () => {
             return (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.03 }}
+                initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: (idx % 6) * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setHoveredSkill(skill)}
                 onMouseLeave={() => setHoveredSkill(null)}
-                className={`p-5 rounded-2xl transition-all duration-200 cursor-pointer ${
+                title={`${skill.name} — ${skill.experience} production experience`}
+                className={`group p-5 rounded-2xl transition-all duration-300 cursor-pointer ${
                   isHovered
-                    ? 'bg-zinc-900 border-[#00F0FF] shadow-glow-accent -translate-y-1'
+                    ? 'bg-zinc-900 border-[#00F0FF] shadow-glow-accent -translate-y-1.5'
                     : isRelated
-                    ? 'bg-zinc-900/80 border-[#00F0FF]/40'
-                    : 'bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 hover:border-white/20'
+                    ? 'bg-zinc-900/80 border-[#00F0FF]/40 -translate-y-0.5'
+                    : 'bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 hover:border-white/25 hover:-translate-y-1 hover:shadow-lg'
                 } border`}
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-200 border border-white/5">
+                    <div className="p-2 rounded-lg bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-200 border border-white/5 transition-transform duration-200 group-hover:scale-105 group-hover:-translate-y-0.5">
                       {renderSkillIcon(skill.iconKey)}
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900">
+                      <h3 className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 group-hover:text-[#00F0FF] transition-colors duration-200">
                         {skill.name}
                       </h3>
                       <span className="font-mono text-[11px] text-zinc-400">
@@ -157,7 +161,7 @@ export const Skills: React.FC = () => {
                   </div>
 
                   {skill.highlighted && (
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/25">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/25 transition-transform duration-200 group-hover:scale-105">
                       Core
                     </span>
                   )}
@@ -174,7 +178,7 @@ export const Skills: React.FC = () => {
                     {skill.related.map((rel) => (
                       <span
                         key={rel}
-                        className="px-1.5 py-0.5 rounded bg-white/[0.03] dark:bg-white/[0.03] light:bg-zinc-200 text-zinc-400 dark:text-zinc-400 light:text-zinc-700 text-[10px] font-mono"
+                        className="px-1.5 py-0.5 rounded bg-white/[0.03] dark:bg-white/[0.03] light:bg-zinc-200 text-zinc-400 dark:text-zinc-400 light:text-zinc-700 text-[10px] font-mono transition-all duration-150 hover:text-[#00F0FF] hover:bg-white/10"
                       >
                         {rel}
                       </span>

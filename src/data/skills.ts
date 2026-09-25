@@ -1,6 +1,6 @@
 export interface SkillItem {
   name: string;
-  category: 'languages' | 'frontend' | 'backend' | 'database' | 'cloud' | 'devops';
+  category: 'languages' | 'frontend' | 'backend' | 'database' | 'cloud' | 'devops' | 'integrations';
   level: number; // 1-100
   experience: string;
   description: string;
@@ -268,6 +268,43 @@ export const skillCategories: SkillCategory[] = [
         description: "Enterprise source control workflows, Jira sprint planning, backlog grooming, and technical delivery tracking.",
         related: ["Git & GitHub"],
         iconKey: "Share2"
+      }
+    ]
+  },
+  {
+    id: "integrations",
+    name: "Integrations & Real-Time",
+    description: "Third-party enterprise webhooks, bidirectional socket communication, and notification engines",
+    skills: [
+      {
+        name: "Socket.io",
+        category: "integrations",
+        level: 94,
+        experience: "4+ yrs",
+        description: "Bidirectional real-time event broadcasting, persistent room connections, atomic slot reservation locks (<25ms latency), and heartbeat connection pooling.",
+        highlighted: true,
+        related: ["Node.js 22+", "Angular 18+", "RESTful API Design"],
+        iconKey: "Radio"
+      },
+      {
+        name: "Bulk SMS, WhatsApp & Email Integration",
+        category: "integrations",
+        level: 94,
+        experience: "4+ yrs",
+        description: "High-volume transactional and Bulk SMS pipelines, WhatsApp Business API messaging, automated parent/client fee alerts, scheduled reminder cron workers, delivery status webhooks, and SendGrid/AWS SES dispatch.",
+        highlighted: true,
+        related: ["Bulk SMS", "WhatsApp API", "Node.js 22+", "Webhooks"],
+        iconKey: "MessageSquare"
+      },
+      {
+        name: "MRI Webhook Integration",
+        category: "integrations",
+        level: 90,
+        experience: "3+ yrs",
+        description: "Enterprise real estate data synchronization via MRI Software webhooks, resilient intake listeners, idempotent payload verification, signature auth, and automated ingestion pipelines.",
+        highlighted: true,
+        related: ["Node.js 22+", "MongoDB", "RESTful API Design"],
+        iconKey: "Webhook"
       }
     ]
   }

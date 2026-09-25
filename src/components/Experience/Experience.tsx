@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, CheckCircle2, TrendingUp, Trophy } from 'lucide-react';
 import { experienceData } from '../../data/experience';
+import { AnimatedMetric } from '../common/AnimatedMetric';
 
 export const Experience: React.FC = () => {
   return (
@@ -23,37 +24,53 @@ export const Experience: React.FC = () => {
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 text-xs font-mono text-zinc-300 dark:text-zinc-300 light:text-zinc-700 w-fit">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 text-xs font-mono text-zinc-300 dark:text-zinc-300 light:text-zinc-700 w-fit transition-transform duration-200 hover:scale-[1.02]">
             <TrendingUp className="w-4 h-4 text-[#00F0FF]" />
             <span>Continuous Delivery & Architectural Leadership</span>
           </div>
         </div>
 
         {/* Premium Vertical Timeline */}
-        <div className="relative pl-6 sm:pl-10 md:pl-32 space-y-12 before:absolute before:left-2.5 sm:before:left-4 md:before:left-24 before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-[#00F0FF] before:via-blue-500/40 before:to-zinc-800">
+        <div className="relative pl-6 sm:pl-10 md:pl-32 space-y-12">
+          {/* Animated Progressive Timeline Line */}
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute left-2.5 sm:left-4 md:left-24 top-4 bottom-4 w-[2px] origin-top bg-gradient-to-b from-[#00F0FF] via-blue-500/40 to-zinc-800 pointer-events-none"
+            aria-hidden="true"
+          />
+
           {experienceData.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="relative group"
             >
               {/* Year Stamp on Desktop (Left of line) */}
               <div className="hidden md:block absolute -left-32 top-1 text-right w-24">
-                <span className="font-mono text-xs font-bold text-zinc-400 group-hover:text-[#00F0FF] transition-colors">
+                <span className="font-mono text-xs font-bold text-zinc-400 group-hover:text-[#00F0FF] transition-colors duration-200">
                   {item.yearRange}
                 </span>
               </div>
 
               {/* Glowing timeline node dot */}
-              <div className="absolute -left-6 sm:-left-10 md:-left-8 top-1.5 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full bg-[#050505] dark:bg-[#050505] light:bg-white border-2 border-[#00F0FF] shadow-glow-accent group-hover:scale-125 transition-transform" />
-              </div>
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
+                className="absolute -left-6 sm:-left-10 md:-left-8 top-1.5 flex items-center justify-center z-10"
+              >
+                <div className="w-4 h-4 rounded-full bg-[#050505] dark:bg-[#050505] light:bg-white border-2 border-[#00F0FF] shadow-glow-accent group-hover:scale-125 transition-transform duration-200" />
+              </motion.div>
 
               {/* Experience Card */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200 group-hover:border-[#00F0FF]/40 transition-all duration-300 shadow-xl">
+              <div className="p-6 sm:p-8 rounded-2xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200 group-hover:border-[#00F0FF]/40 transition-all duration-300 group-hover:-translate-y-1 shadow-xl hover:shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
                 
                 {/* Header row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
@@ -131,7 +148,7 @@ export const Experience: React.FC = () => {
                     {item.metrics.map((metric, mIdx) => (
                       <div key={mIdx} className="flex items-baseline gap-1.5">
                         <span className="font-heading font-extrabold text-base sm:text-lg text-white dark:text-white light:text-zinc-900 text-glow">
-                          {metric.value}
+                          <AnimatedMetric value={metric.value} />
                         </span>
                         <span className="font-mono text-[11px] text-zinc-500">
                           {metric.label}
@@ -145,7 +162,7 @@ export const Experience: React.FC = () => {
                     {item.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-200 text-zinc-300 dark:text-zinc-300 light:text-zinc-800 border border-white/5"
+                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-200 text-zinc-300 dark:text-zinc-300 light:text-zinc-800 border border-white/5 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20"
                       >
                         {tech}
                       </span>

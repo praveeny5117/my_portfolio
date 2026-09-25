@@ -1,5 +1,6 @@
 import React from 'react';
 import { CustomCursor } from './components/common/CustomCursor';
+import { ScrollProgressBar } from './components/common/ScrollProgressBar';
 import { InteractiveBackground } from './components/common/InteractiveBackground';
 import { Navbar } from './components/Navbar/Navbar';
 import { Hero } from './components/Hero/Hero';
@@ -18,6 +19,9 @@ export const App: React.FC = () => {
     <div className="relative min-h-screen bg-[#F8F9FA] dark:bg-[#050505] text-[#0F172A] dark:text-[#F3F4F6] selection:bg-[#00F0FF]/25 selection:text-[#00F0FF] transition-colors duration-300">
       {/* Subtle Custom Cursor for Desktop */}
       <CustomCursor />
+
+      {/* Hardware-Accelerated Smooth Scroll Progress Bar */}
+      <ScrollProgressBar />
 
       {/* Performant Low-GPU Interactive Background */}
       <InteractiveBackground />

@@ -20,7 +20,8 @@ export const SystemConsole: React.FC = () => {
         '● Frontend: Angular 18+ • React.js • TypeScript • JavaScript • Tailwind CSS',
         '● Backend:  Node.js • Express.js • REST APIs • Microservices • JWT • RBAC',
         '● Database: MongoDB Aggregation Pipelines • Compound Indexing • SQL',
-        '● Cloud:    AWS (EC2, S3, Amplify) • Nginx • PM2 • Git CI/CD'
+        '● Cloud:    AWS (EC2, S3, Amplify) • Nginx • PM2 • Git CI/CD',
+        '● Real-Time: Socket.io • Bulk SMS & WhatsApp Business API • MRI Webhooks'
       ],
       isSuccess: true,
     },
@@ -41,7 +42,8 @@ export const SystemConsole: React.FC = () => {
       '⚡ Frontend: Angular 18+, React.js, TypeScript, PrimeNG, Tailwind CSS',
       '⚡ Backend: Node.js, Express.js, High-Throughput REST APIs, Microservices, JWT',
       '⚡ Database: MongoDB, Aggregation Pipelines, Compound Indexing, SQL',
-      '⚡ Cloud & DevOps: AWS EC2, S3, Amplify, Nginx Reverse Proxy, PM2'
+      '⚡ Cloud & DevOps: AWS EC2, S3, Amplify, Nginx Reverse Proxy, PM2',
+      '⚡ Real-Time & Messaging: Socket.io, Bulk SMS & WhatsApp API, MRI Webhooks'
     ],
     status: '● Available for technical leadership, enterprise consulting & full-time senior engineering roles.',
     arch: [

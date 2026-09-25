@@ -26,7 +26,7 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
             <span className="font-bold text-white text-xs">Adamsbridge • Real Estate Sourcing & Valuation</span>
           </div>
           <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/25">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>.NET ➔ MongoDB Migrated (Zero Downtime)</span>
           </div>
         </div>
@@ -115,7 +115,7 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
             <span className="font-bold text-white text-xs">Adamsbridge • Healthcare Data & Compliance Platform</span>
           </div>
           <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/25">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>HIPAA Compliant • Granular RBAC</span>
           </div>
         </div>
@@ -192,7 +192,7 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
             <span className="font-bold text-white text-xs">Tango Eye • AI Real-Time Retail Analytics</span>
           </div>
           <div className="flex items-center gap-1.5 text-[11px] text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/25">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
             <span>Live Camera Telemetry Ingestion</span>
           </div>
         </div>
@@ -273,7 +273,7 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
             <span className="font-bold text-white text-xs">Analytic Brains • Customer 360 & Valurite Suite</span>
           </div>
           <div className="flex items-center gap-1.5 text-[11px] text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/25">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
             <span>3 Enterprise Platforms Shipped</span>
           </div>
         </div>
@@ -339,7 +339,7 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
             <span className="font-bold text-white text-xs">Bewittch • Fashion Talent & Event Ecosystem</span>
           </div>
           <div className="flex items-center gap-1.5 text-[11px] text-pink-400 bg-pink-500/10 px-2.5 py-0.5 rounded-full border border-pink-500/25">
-            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
             <span>React.js + Socket.io Live Sync (&lt;25ms)</span>
           </div>
         </div>
@@ -424,7 +424,7 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
             <span className="font-bold text-white text-xs">Smart School ERP • Multi-Tenant SaaS</span>
           </div>
           <div className="flex items-center gap-2 text-[11px] text-cyan-400 bg-[#00F0FF]/10 px-2.5 py-0.5 rounded-full border border-[#00F0FF]/25">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
             <span>Tenant: Greenfield Academy (ID: #TEN-084)</span>
           </div>
         </div>
@@ -596,7 +596,7 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
           <span className="font-bold text-white text-xs">OrderMe • Room 408 (Executive Suite)</span>
         </div>
         <span className="text-[10px] bg-purple-500/10 text-purple-300 px-2 py-0.5 rounded border border-purple-500/20 flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping" />
+          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
           Live WebSockets KDS Active
         </span>
       </div>

@@ -192,13 +192,13 @@ export const GitHub: React.FC = () => {
             <AnimatePresence>
               {filteredRepos.map((repo, idx) => {
                 return (
-                  <motion.div
+                    <motion.div
                     key={repo.name}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.98 }}
                     transition={{ duration: 0.3, delay: idx * 0.05 }}
-                    className="p-6 sm:p-7 rounded-2xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all duration-300 shadow-xl group relative overflow-hidden"
+                    className="p-6 sm:p-7 rounded-2xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all duration-300 shadow-xl hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1 group relative overflow-hidden"
                   >
                     {/* Subtle top edge glow on hover */}
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00F0FF]/0 to-transparent group-hover:via-[#00F0FF]/60 transition-all duration-500" />
@@ -209,7 +209,7 @@ export const GitHub: React.FC = () => {
                       <div className="space-y-3 flex-1">
                         {/* Badges row */}
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider font-semibold bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/25 flex items-center gap-1">
+                          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider font-semibold bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/25 flex items-center gap-1 transition-transform duration-200 group-hover:scale-105">
                             <Layers className="w-2.5 h-2.5" />
                             {repo.suite}
                           </span>
@@ -233,7 +233,7 @@ export const GitHub: React.FC = () => {
                           >
                             <Code2 className="w-5 h-5 text-[#00F0FF] opacity-80" />
                             <span>{repo.name}</span>
-                            <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                            <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
                           </a>
                         </div>
 
@@ -247,7 +247,7 @@ export const GitHub: React.FC = () => {
                           {repo.architectureTags.map((tag) => (
                             <span
                               key={tag}
-                              className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/[0.03] dark:bg-white/[0.03] light:bg-zinc-200 text-zinc-300 dark:text-zinc-300 light:text-zinc-800 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-300"
+                              className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/[0.03] dark:bg-white/[0.03] light:bg-zinc-200 text-zinc-300 dark:text-zinc-300 light:text-zinc-800 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-300 transition-all duration-150 hover:-translate-y-0.5 hover:border-white/20"
                             >
                               {tag}
                             </span>

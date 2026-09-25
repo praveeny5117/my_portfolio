@@ -125,9 +125,11 @@
   background: rgba(0, 240, 255, 0.4);
 }
 
-/* Reduced motion preference */
+/* Reduced motion preference - Mandatory Accessibility compliance */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

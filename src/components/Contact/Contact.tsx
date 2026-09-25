@@ -95,7 +95,13 @@ export const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Section Heading */}
-        <div className="space-y-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="space-y-4"
+        >
           <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-[#00F0FF] uppercase">
             <span className="w-6 h-[1px] bg-[#00F0FF]" />
             <span>Initiate Direct Contact</span>
@@ -109,15 +115,21 @@ export const Contact: React.FC = () => {
           <p className="text-sm sm:text-base text-zinc-400 dark:text-zinc-400 light:text-zinc-600 max-w-xl font-sans leading-relaxed">
             Whether you have an enterprise platform in need of architectural leadership, a high-throughput API requiring optimization, or a greenfield SaaS product—I am ready to help.
           </p>
-        </div>
+        </motion.div>
 
         {/* 2-Column Contact Interface */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Direct channels & Quick Action */}
-          <div className="lg:col-span-5 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 space-y-8"
+          >
             {/* Quick Copy Email & Contact Card */}
-            <div className="p-6 rounded-2xl bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-50 border border-white/10 dark:border-white/10 light:border-zinc-300 space-y-4">
+            <div className="p-6 rounded-2xl bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-50 border border-white/10 dark:border-white/10 light:border-zinc-300 space-y-4 shadow-xl">
               <div className="text-xs font-mono uppercase text-zinc-400">
                 Direct Communication Channels:
               </div>
@@ -126,7 +138,7 @@ export const Contact: React.FC = () => {
                 <span className="truncate">{emailAddress}</span>
                 <button
                   onClick={handleCopyEmail}
-                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center gap-1.5 shrink-0"
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center gap-1.5 shrink-0 hover:-translate-y-0.5 active:translate-y-0"
                   title="Copy email to clipboard"
                 >
                   {copiedEmail ? (
@@ -150,7 +162,7 @@ export const Contact: React.FC = () => {
                 </span>
                 <a
                   href={`tel:${phoneNumber.replace(/\s+/g, '')}`}
-                  className="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/30 text-[11px] font-medium transition-colors"
+                  className="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/30 text-[11px] font-medium transition-all duration-200 hover:-translate-y-0.5"
                 >
                   Call Direct
                 </a>
@@ -175,13 +187,13 @@ export const Contact: React.FC = () => {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 rounded-xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all flex items-center justify-between group"
+                    className="p-4 rounded-xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg flex items-center justify-between group"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-white/5 group-hover:bg-[#00F0FF]/15 group-hover:text-[#00F0FF] transition-colors">
-                        {item.name === 'GitHub' && <GitHubIcon className="w-4 h-4" />}
-                        {item.name === 'LinkedIn' && <LinkedInIcon className="w-4 h-4" />}
-                        {item.name === 'Email' && <Mail className="w-4 h-4" />}
+                      <div className="p-2 rounded-lg bg-white/5 group-hover:bg-[#00F0FF]/15 group-hover:text-[#00F0FF] transition-all duration-200 group-hover:scale-105">
+                        {item.name === 'GitHub' && <GitHubIcon className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />}
+                        {item.name === 'LinkedIn' && <LinkedInIcon className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />}
+                        {item.name === 'Email' && <Mail className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />}
                       </div>
                       <div>
                         <div className="font-heading font-semibold text-sm text-white dark:text-white light:text-zinc-900 group-hover:text-[#00F0FF] transition-colors">
@@ -193,15 +205,21 @@ export const Contact: React.FC = () => {
                       </div>
                     </div>
 
-                    <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-[#00F0FF] transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-[#00F0FF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Contact Form with Validation */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
             <div className="p-8 sm:p-10 rounded-3xl bg-zinc-900/50 dark:bg-zinc-900/50 light:bg-zinc-50 border border-white/10 dark:border-white/10 light:border-zinc-300 shadow-2xl relative">
               <AnimatePresence>
                 {isSubmitted && (
@@ -319,7 +337,7 @@ export const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 px-6 rounded-xl bg-white dark:bg-white light:bg-zinc-950 text-black dark:text-black light:text-white font-mono font-bold text-xs uppercase tracking-wider hover:bg-[#00F0FF] dark:hover:bg-[#00F0FF] light:hover:bg-zinc-800 transition-all duration-200 shadow-lg hover:shadow-glow-accent disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="group w-full py-4 px-6 rounded-xl bg-white dark:bg-white light:bg-zinc-950 text-black dark:text-black light:text-white font-mono font-bold text-xs uppercase tracking-wider hover:bg-[#00F0FF] dark:hover:bg-[#00F0FF] light:hover:bg-zinc-800 transition-all duration-200 shadow-lg hover:shadow-glow-accent hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -329,13 +347,13 @@ export const Contact: React.FC = () => {
                   ) : (
                     <>
                       <span>Transmit Message</span>
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
                     </>
                   )}
                 </button>
               </form>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

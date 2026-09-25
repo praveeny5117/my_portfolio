@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Layers, Server, Database, Cloud, Zap, Shield, GraduationCap, MapPin, Phone, Mail, Terminal, Trophy } from 'lucide-react';
 import { developerData } from '../../data/developer';
+import { AnimatedMetric } from '../common/AnimatedMetric';
 
 export const About: React.FC = () => {
   const engineeringPillars = [
@@ -112,13 +113,17 @@ export const About: React.FC = () => {
               {engineeringPillars.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div
+                  <motion.div
                     key={idx}
-                    className="p-5 rounded-xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all duration-300 group hover:-translate-y-0.5"
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: idx * 0.07 }}
+                    className="p-5 rounded-xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all duration-300 group hover:-translate-y-1 shadow-lg hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
                   >
                     <div className="flex items-center gap-3 mb-2.5">
                       <div className="p-2 rounded-lg bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-200 border border-white/5 group-hover:border-[#00F0FF]/30 transition-colors">
-                        <Icon className="w-4 h-4 text-[#00F0FF]" />
+                        <Icon className="w-4 h-4 text-[#00F0FF] transition-transform duration-200 group-hover:scale-110" />
                       </div>
                       <h3 className="font-heading text-sm font-semibold text-white dark:text-white light:text-zinc-900 group-hover:text-[#00F0FF] transition-colors">
                         {item.title}
@@ -127,7 +132,7 @@ export const About: React.FC = () => {
                     <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 leading-relaxed font-sans">
                       {item.desc}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
@@ -140,7 +145,7 @@ export const About: React.FC = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {developerData.education.map((edu, eIdx) => (
-                  <div key={eIdx} className="p-3.5 rounded-xl bg-white/[0.02] dark:bg-white/[0.02] light:bg-white border border-white/5 dark:border-white/5 light:border-zinc-200">
+                  <div key={eIdx} className="p-3.5 rounded-xl bg-white/[0.02] dark:bg-white/[0.02] light:bg-white border border-white/5 dark:border-white/5 light:border-zinc-200 transition-all duration-200 hover:border-white/15">
                     <div className="font-heading font-semibold text-xs sm:text-sm text-white dark:text-white light:text-zinc-900">
                       {edu.degree}
                     </div>
@@ -159,7 +164,7 @@ export const About: React.FC = () => {
                 <Trophy className="w-4 h-4 text-amber-400" />
                 <span>Honors & Corporate Recognition</span>
               </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] dark:bg-white/[0.02] light:bg-white border border-amber-500/20 space-y-1.5">
+              <div className="p-4 rounded-xl bg-white/[0.02] dark:bg-white/[0.02] light:bg-white border border-amber-500/20 space-y-1.5 transition-all duration-200 hover:border-amber-500/40">
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="font-heading font-bold text-sm sm:text-base text-white dark:text-white light:text-zinc-900">
                     2x Spot Award Recipient
@@ -179,20 +184,24 @@ export const About: React.FC = () => {
 
         {/* Key Measurable Statistics Area */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="pt-12 border-t border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {developerData.stats.map((stat, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="relative p-6 rounded-2xl bg-zinc-900/50 dark:bg-zinc-900/50 light:bg-zinc-50 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 overflow-hidden group hover:border-[#00F0FF]/30 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: idx * 0.1 }}
+                className="relative p-6 rounded-2xl bg-zinc-900/50 dark:bg-zinc-900/50 light:bg-zinc-50 border border-white/[0.06] dark:border-white/[0.06] light:border-zinc-200 overflow-hidden group hover:border-[#00F0FF]/30 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-glow-accent"
               >
                 <div className="text-3xl sm:text-5xl font-extrabold font-heading text-white dark:text-white light:text-zinc-900 tracking-tight mb-2 group-hover:text-[#00F0FF] transition-colors">
-                  {stat.value}
+                  <AnimatedMetric value={stat.value} />
                 </div>
                 <div className="text-sm font-semibold text-zinc-200 dark:text-zinc-200 light:text-zinc-800 mb-1">
                   {stat.label}
@@ -200,7 +209,7 @@ export const About: React.FC = () => {
                 <div className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-500 font-sans">
                   {stat.subtext}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

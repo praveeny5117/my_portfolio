@@ -8,14 +8,10 @@ export const CustomCursor: React.FC = () => {
   const [isPointer, setIsPointer] = useState(false);
   const [isCardHovered, setIsCardHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const isTouchDevice = typeof window !== 'undefined' ? window.matchMedia('(pointer: coarse)').matches : false;
 
   useEffect(() => {
-    // Detect touch-only devices to disable custom cursor
-    if (window.matchMedia('(pointer: coarse)').matches) {
-      setIsTouchDevice(true);
-      return;
-    }
+    if (isTouchDevice) return;
 
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
@@ -40,7 +36,7 @@ export const CustomCursor: React.FC = () => {
       window.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('mousemove', handleElementHover);
     };
-  }, [x, y]);
+  }, [x, y, isTouchDevice]);
 
   if (isTouchDevice || prefersReduced || !isVisible) {
     return null;

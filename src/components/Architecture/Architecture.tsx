@@ -87,14 +87,18 @@ export const Architecture: React.FC = () => {
             {engineeringDomains.map((domain, dIdx) => {
               const Icon = domain.icon;
               return (
-                <div
+                <motion.div
                   key={dIdx}
-                  className="p-6 rounded-2xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all duration-300 shadow-xl flex flex-col justify-between group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.45, delay: dIdx * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                  className="p-6 rounded-2xl bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-50 border border-white/[0.08] dark:border-white/[0.08] light:border-zinc-200 hover:border-[#00F0FF]/40 transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-xl border ${domain.color}`}>
+                        <div className={`p-2 rounded-xl border ${domain.color} transition-transform duration-200 group-hover:scale-105`}>
                           <Icon className="w-4 h-4" />
                         </div>
                         <h3 className="font-heading font-bold text-base text-white dark:text-white light:text-zinc-950 group-hover:text-[#00F0FF] transition-colors">
@@ -111,14 +115,14 @@ export const Architecture: React.FC = () => {
                       {domain.technologies.map((t) => (
                         <span
                           key={t}
-                          className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-200 text-zinc-300 dark:text-zinc-300 light:text-zinc-800 border border-white/5"
+                          className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-200 text-zinc-300 dark:text-zinc-300 light:text-zinc-800 border border-white/5 transition-all duration-150 hover:-translate-y-0.5 hover:border-white/20"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -138,7 +142,7 @@ export const Architecture: React.FC = () => {
               </h3>
             </div>
             <div className="flex items-center gap-2 font-mono text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20 w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>99.98% High Availability Target</span>
             </div>
           </div>
@@ -147,13 +151,22 @@ export const Architecture: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-stretch relative">
             
             {/* Step 1: Frontend */}
-            <div className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-white/10 dark:border-white/10 light:border-zinc-200 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+              className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-white/10 dark:border-white/10 light:border-zinc-200 flex flex-col justify-between hover:border-[#00F0FF]/40 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-glow-accent group"
+            >
               <div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-cyan-400 mb-2">
-                  <span>TIER 01</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
+                    TIER 01
+                  </span>
                   <span>CLIENT</span>
                 </div>
-                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1">
+                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1 group-hover:text-[#00F0FF] transition-colors">
                   Angular / React
                 </div>
                 <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 font-sans">
@@ -163,16 +176,22 @@ export const Architecture: React.FC = () => {
               <div className="mt-3 pt-2 border-t border-white/5 text-[10px] font-mono text-zinc-500">
                 HTTP/2 • WebSockets • JWT
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 2: Gateway */}
-            <div className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-cyan-500/20 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.17, ease: [0.16, 1, 0.3, 1] }}
+              className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-cyan-500/20 flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group"
+            >
               <div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-cyan-400 mb-2">
                   <span>TIER 02</span>
                   <span>GATEWAY</span>
                 </div>
-                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1">
+                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1 group-hover:text-cyan-300 transition-colors">
                   Nginx Reverse Proxy
                 </div>
                 <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 font-sans">
@@ -182,16 +201,22 @@ export const Architecture: React.FC = () => {
               <div className="mt-3 pt-2 border-t border-white/5 text-[10px] font-mono text-zinc-500">
                 Port 443 ⟶ Port 5000 IPC
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 3: Compute */}
-            <div className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-blue-500/20 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.29, ease: [0.16, 1, 0.3, 1] }}
+              className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-blue-500/20 flex flex-col justify-between hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group"
+            >
               <div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-blue-400 mb-2">
                   <span>TIER 03</span>
                   <span>SERVICES</span>
                 </div>
-                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1">
+                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1 group-hover:text-blue-300 transition-colors">
                   Node.js & Express
                 </div>
                 <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 font-sans">
@@ -201,16 +226,22 @@ export const Architecture: React.FC = () => {
               <div className="mt-3 pt-2 border-t border-white/5 text-[10px] font-mono text-zinc-500">
                 Multi-Tenant Scoping
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 4: Database */}
-            <div className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-emerald-500/20 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.41, ease: [0.16, 1, 0.3, 1] }}
+              className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-emerald-500/20 flex flex-col justify-between hover:border-emerald-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group"
+            >
               <div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-emerald-400 mb-2">
                   <span>TIER 04</span>
                   <span>DATABASE</span>
                 </div>
-                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1">
+                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1 group-hover:text-emerald-300 transition-colors">
                   MongoDB & SQL
                 </div>
                 <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 font-sans">
@@ -220,16 +251,22 @@ export const Architecture: React.FC = () => {
               <div className="mt-3 pt-2 border-t border-white/5 text-[10px] font-mono text-zinc-500">
                 Replica Sets • Index Tuning
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 5: Cloud */}
-            <div className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-purple-500/20 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.53, ease: [0.16, 1, 0.3, 1] }}
+              className="p-4 rounded-xl bg-white/[0.03] dark:bg-white/[0.03] light:bg-white border border-purple-500/20 flex flex-col justify-between hover:border-purple-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group"
+            >
               <div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-purple-400 mb-2">
                   <span>TIER 05</span>
                   <span>CLOUD INFRA</span>
                 </div>
-                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1">
+                <div className="font-heading font-bold text-sm text-white dark:text-white light:text-zinc-900 mb-1 group-hover:text-purple-300 transition-colors">
                   AWS (EC2 & S3)
                 </div>
                 <p className="text-xs text-zinc-400 dark:text-zinc-400 light:text-zinc-600 font-sans">
@@ -239,14 +276,20 @@ export const Architecture: React.FC = () => {
               <div className="mt-3 pt-2 border-t border-white/5 text-[10px] font-mono text-zinc-500">
                 Zero-Downtime Deployments
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
           {/* SVG Data Flow Flowchart representation */}
-          <div className="hidden lg:flex items-center justify-between text-xs font-mono text-zinc-400 px-4 py-2 rounded-xl bg-black/40 border border-white/5">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="hidden lg:flex items-center justify-between text-xs font-mono text-zinc-400 px-4 py-2 rounded-xl bg-black/40 border border-white/5"
+          >
             <span className="flex items-center gap-1.5 text-zinc-300">
-              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               Client Requests
             </span>
             <ArrowRight className="w-4 h-4 text-zinc-600" />
@@ -269,7 +312,7 @@ export const Architecture: React.FC = () => {
               <Cloud className="w-3.5 h-3.5" />
               AWS S3 Vault
             </span>
-          </div>
+          </motion.div>
         </div>
 
         {/* 3. 6-Phase Engineering Lifecycle Stepper */}
