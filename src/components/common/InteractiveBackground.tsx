@@ -19,11 +19,11 @@ export const InteractiveBackground: React.FC = () => {
   const prefersReduced = useReducedMotion();
   const { isDark } = useTheme();
 
-  // Subtle ambient glowing orbs with deep crimson/red tone matching user reference
+  // Subtle ambient glowing orbs with deep electric blue tone
   const ambientNodes = useMemo(() => [
-    { top: '10%', left: '20%', size: '500px', color: 'rgba(239, 68, 68, 0.05)', delay: '0s' },
-    { top: '45%', right: '15%', size: '550px', color: 'rgba(220, 38, 38, 0.04)', delay: '2s' },
-    { top: '75%', left: '25%', size: '480px', color: 'rgba(185, 28, 28, 0.035)', delay: '4s' },
+    { top: '10%', left: '20%', size: '520px', color: 'rgba(0, 163, 255, 0.055)', delay: '0s' },
+    { top: '45%', right: '15%', size: '560px', color: 'rgba(37, 99, 235, 0.045)', delay: '2s' },
+    { top: '75%', left: '25%', size: '500px', color: 'rgba(14, 165, 233, 0.04)', delay: '4s' },
   ], []);
 
   useEffect(() => {
@@ -101,9 +101,9 @@ export const InteractiveBackground: React.FC = () => {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Red/coral theme matching user uploaded reference image
-      const nodeColor = isDark ? '#FF3B30' : '#E11D48';
-      const lineColorRgb = isDark ? '255, 59, 48' : '225, 29, 72';
+      // Electric blue constellation theme
+      const nodeColor = isDark ? '#00A3FF' : '#0284C7';
+      const lineColorRgb = isDark ? '0, 163, 255' : '2, 132, 199';
 
       // 1. Update positions and draw particles
       for (let i = 0; i < particles.length; i++) {
