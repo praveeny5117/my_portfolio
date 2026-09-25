@@ -26,6 +26,12 @@ export interface DeveloperProfile {
     score: string;
     period: string;
   }[];
+  awards?: {
+    title: string;
+    issuer: string;
+    badge: string;
+    description: string;
+  }[];
   terminalCommands: {
     command: string;
     output: string | string[];
@@ -71,11 +77,24 @@ export const developerData: DeveloperProfile = {
       period: "2017 – 2020"
     }
   ],
+  awards: [
+    {
+      title: "Spot Award (2x Recipient)",
+      issuer: "Adamsbridge",
+      badge: "Double Honoree",
+      description: "Awarded twice in recognition of outstanding engineering delivery, leading the critical zero-downtime .NET to MongoDB database migration, and driving a 50% application query speed improvement."
+    }
+  ],
   stats: [
     {
       value: "5+ Years",
       label: "Software Development Experience",
       subtext: "Delivering enterprise workflows, APIs, and cloud-native SaaS systems"
+    },
+    {
+      value: "2x",
+      label: "Spot Award Recipient",
+      subtext: "Recognized for critical database migration, 50% query boost & engineering leadership"
     },
     {
       value: "50%",
@@ -86,15 +105,13 @@ export const developerData: DeveloperProfile = {
       value: "Multi-Tenant",
       label: "SaaS Product Architecture",
       subtext: "Building School ERP with strict tenant isolation, RBAC & payment automations"
-    },
-    {
-      value: "99.98%",
-      label: "Deployment Availability",
-      subtext: "Production AWS EC2, S3, PM2 process management & Nginx reverse proxies"
     }
   ],
   terminalCommands: [
     { command: "whoami", output: "Praveen Yonas — Full Stack Engineer / Senior Full Stack Developer (5+ YOE) | Kallakurichi, TN, India" },
+    {
+      command: "awards", output: "🏆 2x Spot Award Recipient (Adamsbridge) — Honored twice for exceptional engineering leadership, zero-downtime .NET to MongoDB migration, and 50% database query acceleration", highlight: true
+    },
     {
       command: "stack --primary", output: [
         "● Frontend: Angular 18+, React.js, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS",
@@ -106,6 +123,7 @@ export const developerData: DeveloperProfile = {
     {
       command: "impact --summary", output: [
         "⚡ 50% application response speed improvement through MongoDB query optimization and indexing redesign",
+        "⚡ 2x Spot Award winner for exceptional technical delivery and zero-downtime legacy migration",
         "⚡ Architected multi-tenant School ERP SaaS with zero-leakage data isolation and automated fee reconciliation",
         "⚡ Modernized enterprise workflow applications with reusable frontend components and microservice integrations",
         "⚡ Maintained 99.98% production uptime across AWS cloud deployments"

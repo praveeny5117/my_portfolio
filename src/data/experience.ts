@@ -8,6 +8,7 @@ export interface ExperienceItem {
   companyLocation: string;
   type: string;
   summary: string;
+  award?: string;
   technologies: string[];
   keyContributions: string[];
   metrics: { value: string; label: string }[];
@@ -23,6 +24,7 @@ export const experienceData: ExperienceItem[] = [
     company: "Adamsbridge",
     companyLocation: "Real Estate Sourcing & Healthcare Data Management",
     type: "Full-Time",
+    award: "2x Spot Award Recipient — Honored twice for exceptional engineering leadership, delivering the zero-downtime .NET to MongoDB database migration, and driving a 50% application query speed boost.",
     summary: "Leading frontend and backend engineering teams end-to-end across high-scale Real Estate Sourcing and Healthcare Data Management platforms. Partnering with business stakeholders to translate requirements into secure, production-grade technical solutions.",
     technologies: [
       "Angular 18+",
@@ -35,6 +37,7 @@ export const experienceData: ExperienceItem[] = [
       "Bitbucket & Jira"
     ],
     keyContributions: [
+      "Honored with 2x Spot Awards for technical excellence, critical delivery, and driving core platform modernization.",
       "Designed and developed enterprise workflow applications using Angular, Node.js and MongoDB.",
       "Optimized backend APIs and MongoDB queries to significantly reduce response time for large data exports by 50%.",
       "Implemented reusable frontend components and modernized legacy UI components into standalone Angular architecture.",
@@ -43,9 +46,9 @@ export const experienceData: ExperienceItem[] = [
       "Integrated microservices architecture into the platform, improving modularity, scalability, and independent deployability."
     ],
     metrics: [
+      { value: "2x", label: "Spot Award Recipient" },
       { value: "50%", label: "Application Speed Boost" },
-      { value: "0-Downtime", label: "MSSQL to MongoDB Migration" },
-      { value: "100%", label: "Team Code Review Coverage" }
+      { value: "0-Downtime", label: "MSSQL to MongoDB Migration" }
     ]
   },
   {

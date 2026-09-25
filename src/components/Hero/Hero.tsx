@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, MessageSquare, Terminal } from 'lucide-react';
+import { ArrowDown, Download, MessageSquare, Terminal, Trophy } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { SystemConsole } from './SystemConsole';
 import { developerData } from '../../data/developer';
@@ -69,16 +69,24 @@ export const Hero: React.FC = () => {
                 </span>
               </div>
 
-              <div className="space-y-1.5">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 w-fit">
-                  <span className="flex h-2 w-2 relative">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F0FF] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F0FF]"></span>
-                  </span>
-                  <span className="text-xs font-mono font-semibold tracking-wider uppercase text-zinc-200 dark:text-zinc-200 light:text-zinc-800">
-                    FULL STACK ENGINEER
-                  </span>
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 w-fit">
+                    <span className="flex h-2 w-2 relative">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F0FF] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F0FF]"></span>
+                    </span>
+                    <span className="text-xs font-mono font-semibold tracking-wider uppercase text-zinc-200 dark:text-zinc-200 light:text-zinc-800">
+                      FULL STACK ENGINEER
+                    </span>
+                  </div>
+
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-semibold shadow-sm">
+                    <Trophy className="w-3.5 h-3.5 text-amber-400" />
+                    <span>2x Spot Award Recipient</span>
+                  </div>
                 </div>
+
                 <div className="text-xs font-mono text-zinc-400 pl-0.5">
                   <span className="text-white dark:text-white light:text-zinc-900 font-semibold">{developerData.name}</span> • 5+ Years Exp.
                 </div>
@@ -144,6 +152,11 @@ export const Hero: React.FC = () => {
               <span className="flex items-center gap-1.5 text-zinc-300 dark:text-zinc-300 light:text-zinc-700">
                 <Terminal className="w-3.5 h-3.5 text-[#00F0FF]" />
                 5+ Years Hands-on Development
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5 text-amber-400 font-semibold">
+                <Trophy className="w-3.5 h-3.5 text-amber-400" />
+                2x Spot Award Honoree
               </span>
               <span>•</span>
               <span className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700">

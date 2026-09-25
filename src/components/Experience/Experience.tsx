@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, CheckCircle2, TrendingUp } from 'lucide-react';
+import { Briefcase, MapPin, CheckCircle2, TrendingUp, Trophy } from 'lucide-react';
 import { experienceData } from '../../data/experience';
 
 export const Experience: React.FC = () => {
@@ -83,9 +83,31 @@ export const Experience: React.FC = () => {
                 </div>
 
                 {/* Role Summary */}
-                <p className="text-sm text-zinc-300 dark:text-zinc-300 light:text-zinc-700 leading-relaxed font-sans mb-6">
+                <p className="text-sm text-zinc-300 dark:text-zinc-300 light:text-zinc-700 leading-relaxed font-sans mb-5">
                   {item.summary}
                 </p>
+
+                {/* Spot Award / Recognition Callout */}
+                {item.award && (
+                  <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent border border-amber-500/30 flex items-start gap-3.5 shadow-sm">
+                    <div className="p-2 rounded-lg bg-amber-500/20 text-amber-400 shrink-0 mt-0.5">
+                      <Trophy className="w-4 h-4 text-amber-400" />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono font-bold text-amber-300 uppercase tracking-wider">
+                          Key Recognition & Honors
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-200 border border-amber-500/30">
+                          2x Honoree
+                        </span>
+                      </div>
+                      <p className="text-xs text-amber-100/90 font-sans leading-relaxed">
+                        {item.award}
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 {/* Key Contributions */}
                 <div className="space-y-2.5 mb-6">

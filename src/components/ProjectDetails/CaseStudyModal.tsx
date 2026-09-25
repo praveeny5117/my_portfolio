@@ -56,10 +56,26 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
           {/* Modal Header */}
           <div className="p-6 sm:p-8 bg-[#101016] border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#00F0FF]">
+              <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#00F0FF] flex-wrap">
                 <span>CASE STUDY</span>
                 <span>•</span>
                 <span>PROJECT {project.number}</span>
+                <span>•</span>
+                {project.projectType === 'official' && (
+                  <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 font-semibold">
+                    OFFICIAL • {project.company} ({project.companyRole})
+                  </span>
+                )}
+                {project.projectType === 'client' && (
+                  <span className="px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/25 font-semibold">
+                    CLIENT OUTSOURCING • {project.company} ({project.companyRole})
+                  </span>
+                )}
+                {project.projectType === 'personal' && (
+                  <span className="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/25 font-semibold">
+                    PERSONAL SAAS • {project.companyRole || 'Independent Product'}
+                  </span>
+                )}
                 <span>•</span>
                 <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-zinc-300">
                   {project.category}

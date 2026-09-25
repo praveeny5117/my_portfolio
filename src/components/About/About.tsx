@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Server, Database, Cloud, Zap, Shield, GraduationCap, MapPin, Phone, Mail, Terminal } from 'lucide-react';
+import { Layers, Server, Database, Cloud, Zap, Shield, GraduationCap, MapPin, Phone, Mail, Terminal, Trophy } from 'lucide-react';
 import { developerData } from '../../data/developer';
 
 export const About: React.FC = () => {
@@ -150,6 +150,27 @@ export const About: React.FC = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Honors & Engineering Recognition */}
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-amber-500/[0.06] via-amber-500/[0.02] to-transparent dark:from-amber-500/[0.06] light:bg-amber-50/60 border border-amber-500/25 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono text-amber-400 uppercase tracking-wider font-semibold">
+                <Trophy className="w-4 h-4 text-amber-400" />
+                <span>Honors & Corporate Recognition</span>
+              </div>
+              <div className="p-4 rounded-xl bg-white/[0.02] dark:bg-white/[0.02] light:bg-white border border-amber-500/20 space-y-1.5">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="font-heading font-bold text-sm sm:text-base text-white dark:text-white light:text-zinc-900">
+                    2x Spot Award Recipient
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    Adamsbridge • Double Honoree
+                  </span>
+                </div>
+                <p className="text-xs text-zinc-300 dark:text-zinc-300 light:text-zinc-600 leading-relaxed font-sans">
+                  Honored with two corporate Spot Awards for exceptional technical leadership, executing the zero-downtime .NET to MongoDB database migration, and achieving a 50% application query speed improvement.
+                </p>
               </div>
             </div>
           </motion.div>
