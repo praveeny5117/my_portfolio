@@ -30,7 +30,7 @@ export const App: React.FC = () => {
       <Navbar />
 
       {/* Main Content Sections */}
-      <main id="main-content" tabIndex={-1} className="focus:outline-none">
+      <main id="main-content" tabIndex={-1} className="relative z-10 focus:outline-none">
         <Hero />
         <About />
         <Skills />
