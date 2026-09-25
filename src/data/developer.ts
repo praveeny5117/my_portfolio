@@ -19,6 +19,7 @@ export interface DeveloperProfile {
   }[];
   heroTags: string[];
   resumeUrl: string;
+  profileImage: string;
   education: {
     degree: string;
     institution: string;
@@ -38,6 +39,7 @@ export const developerData: DeveloperProfile = {
   tagline: "DESIGN. BUILD. OPTIMIZE. DEPLOY.",
   headline: "Building Scalable Web Applications & Enterprise Platforms",
   subheadline: "Full Stack Engineer specializing in Angular, React, Node.js, MongoDB and AWS. I build production-ready applications, APIs and cloud solutions with a focus on performance, scalability and maintainability.",
+  profileImage: "/profile.jpg",
   location: "Kallakurichi, Tamil Nadu, India",
   phone: "+91 96268 30829",
   email: "yonaspraveen@gmail.com",
@@ -93,18 +95,22 @@ export const developerData: DeveloperProfile = {
   ],
   terminalCommands: [
     { command: "whoami", output: "Praveen Yonas — Full Stack Engineer / Senior Full Stack Developer (5+ YOE) | Kallakurichi, TN, India" },
-    { command: "stack --primary", output: [
-      "● Frontend: Angular 18+, React.js, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS",
-      "● Backend:  Node.js, Express.js, REST APIs, Microservices, JWT Auth, RBAC",
-      "● Database: MongoDB (Aggregation Pipelines & Indexing), SQL, Data Modeling",
-      "● Cloud:    AWS (EC2, S3, Amplify), PM2, Nginx, Git, CI/CD Automated Pipelines"
-    ] },
-    { command: "impact --summary", output: [
-      "⚡ 50% application response speed improvement through MongoDB query optimization and indexing redesign",
-      "⚡ Architected multi-tenant School ERP SaaS with zero-leakage data isolation and automated fee reconciliation",
-      "⚡ Modernized enterprise workflow applications with reusable frontend components and microservice integrations",
-      "⚡ Maintained 99.98% production uptime across AWS cloud deployments"
-    ] },
+    {
+      command: "stack --primary", output: [
+        "● Frontend: Angular 18+, React.js, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS",
+        "● Backend:  Node.js, Express.js, REST APIs, Microservices, JWT Auth, RBAC",
+        "● Database: MongoDB (Aggregation Pipelines & Indexing), SQL, Data Modeling",
+        "● Cloud:    AWS (EC2, S3, Amplify), PM2, Nginx, Git, CI/CD Automated Pipelines"
+      ]
+    },
+    {
+      command: "impact --summary", output: [
+        "⚡ 50% application response speed improvement through MongoDB query optimization and indexing redesign",
+        "⚡ Architected multi-tenant School ERP SaaS with zero-leakage data isolation and automated fee reconciliation",
+        "⚡ Modernized enterprise workflow applications with reusable frontend components and microservice integrations",
+        "⚡ Maintained 99.98% production uptime across AWS cloud deployments"
+      ]
+    },
     { command: "status", output: "● Available for Full-Time Senior / Lead Roles and Scalable Contract Engagements", highlight: true },
     { command: "contact", output: "Email: yonaspraveen@gmail.com | Phone: +91 96268 30829 | LinkedIn: linkedin.com/in/praveen-y-751125178" }
   ]

@@ -53,15 +53,36 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 flex flex-col justify-center space-y-6"
           >
-            {/* Engineer Identity Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 w-fit">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F0FF] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F0FF]"></span>
-              </span>
-              <span className="text-xs font-mono font-semibold tracking-wider uppercase text-zinc-200 dark:text-zinc-200 light:text-zinc-800">
-                FULL STACK ENGINEER
-              </span>
+            {/* Engineer Profile Avatar & Identity */}
+            <div className="flex items-center gap-4">
+              <div className="relative group shrink-0">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-[#00F0FF]/60 shadow-[0_0_20px_rgba(0,240,255,0.22)] bg-zinc-900 transition-all duration-300 group-hover:scale-105 group-hover:border-[#00F0FF]">
+                  <img
+                    src={developerData.profileImage}
+                    alt={developerData.name}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: '50% 25%' }}
+                  />
+                </div>
+                <span className="absolute bottom-0 right-0 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-emerald-500 border-2 border-[#050505] flex items-center justify-center translate-x-1 translate-y-1 shadow-md" title="Available for projects">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                </span>
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] dark:bg-white/[0.04] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 w-fit">
+                  <span className="flex h-2 w-2 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F0FF] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F0FF]"></span>
+                  </span>
+                  <span className="text-xs font-mono font-semibold tracking-wider uppercase text-zinc-200 dark:text-zinc-200 light:text-zinc-800">
+                    FULL STACK ENGINEER
+                  </span>
+                </div>
+                <div className="text-xs font-mono text-zinc-400 pl-0.5">
+                  <span className="text-white dark:text-white light:text-zinc-900 font-semibold">{developerData.name}</span> • 5+ Years Exp.
+                </div>
+              </div>
             </div>
 
             {/* Main Headline */}
