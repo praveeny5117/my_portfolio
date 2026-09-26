@@ -5,12 +5,21 @@ import {
   Camera, Eye, Layers, ShieldAlert, Cpu, Sparkles,
   Calendar, Bell, Star, Send
 } from 'lucide-react';
+import { projectsData } from '../../data/projects';
+import type { Project } from '../../data/projects';
+import { ProjectScreenshotShowcase } from './ProjectScreenshotShowcase';
 
 interface ProjectVisualMockupProps {
   projectId: string;
+  project?: Project;
+  onOpenGallery?: () => void;
 }
 
-export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projectId }) => {
+export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({
+  projectId,
+  project,
+  onOpenGallery
+}) => {
   // ==========================================
   // OFFICIAL PROJECT 01: Adamsbridge Real Estate
   // ==========================================
@@ -412,7 +421,8 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
   // PERSONAL PROJECT 01: Smart School ERP (Multi-Tenant SaaS)
   // ==========================================
   if (projectId === 'smart-school-erp') {
-    return (
+    const proj = project || projectsData.find((p) => p.id === 'smart-school-erp');
+    const blueprintMockup = (
       <div className="w-full h-full min-h-[360px] rounded-2xl bg-[#09090D] border border-white/10 p-5 flex flex-col justify-between font-mono text-xs select-none overflow-hidden relative group">
         {/* Glow accent */}
         <div className="absolute -top-10 -right-10 w-44 h-44 bg-[#00F0FF]/10 rounded-full blur-3xl" />
@@ -505,13 +515,26 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
         </div>
       </div>
     );
+
+    if (proj && proj.screenshots && proj.screenshots.length > 0) {
+      return (
+        <ProjectScreenshotShowcase
+          project={proj}
+          onOpenGallery={onOpenGallery}
+          renderBlueprintMockup={() => blueprintMockup}
+        />
+      );
+    }
+
+    return blueprintMockup;
   }
 
   // ==========================================
   // PERSONAL PROJECT 02: Hospital Management System
   // ==========================================
   if (projectId === 'hospital-management-system') {
-    return (
+    const proj = project || projectsData.find((p) => p.id === 'hospital-management-system');
+    const blueprintMockup = (
       <div className="w-full h-full min-h-[360px] rounded-2xl bg-[#09090D] border border-white/10 p-5 flex flex-col justify-between font-mono text-xs select-none overflow-hidden relative group">
         <div className="absolute -top-10 -right-10 w-44 h-44 bg-emerald-500/10 rounded-full blur-3xl" />
 
@@ -580,12 +603,25 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
         </div>
       </div>
     );
+
+    if (proj && proj.screenshots && proj.screenshots.length > 0) {
+      return (
+        <ProjectScreenshotShowcase
+          project={proj}
+          onOpenGallery={onOpenGallery}
+          renderBlueprintMockup={() => blueprintMockup}
+        />
+      );
+    }
+
+    return blueprintMockup;
   }
 
   // ==========================================
   // PERSONAL PROJECT 03: OrderMe Hotel Operations
   // ==========================================
-  return (
+  const proj = project || projectsData.find((p) => p.id === 'orderme-application');
+  const blueprintMockup = (
     <div className="w-full h-full min-h-[360px] rounded-2xl bg-[#09090D] border border-white/10 p-5 flex flex-col justify-between font-mono text-xs select-none overflow-hidden relative group">
       <div className="absolute -top-10 -left-10 w-44 h-44 bg-purple-500/10 rounded-full blur-3xl" />
 
@@ -653,4 +689,16 @@ export const ProjectVisualMockup: React.FC<ProjectVisualMockupProps> = ({ projec
       </div>
     </div>
   );
+
+  if (proj && proj.screenshots && proj.screenshots.length > 0) {
+    return (
+      <ProjectScreenshotShowcase
+        project={proj}
+        onOpenGallery={onOpenGallery}
+        renderBlueprintMockup={() => blueprintMockup}
+      />
+    );
+  }
+
+  return blueprintMockup;
 };

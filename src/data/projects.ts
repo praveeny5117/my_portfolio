@@ -19,6 +19,15 @@ export interface ProjectCaseStudy {
   results: { metric: string; label: string }[];
 }
 
+export interface ProjectScreenshot {
+  url: string;
+  title: string;
+  caption: string;
+  category: string;
+  isPrimary?: boolean;
+  aspectRatio?: 'desktop' | 'mobile' | 'receipt';
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -36,6 +45,8 @@ export interface Project {
   accentColor: string;
   githubUrl?: string;
   demoUrl?: string;
+  primaryImage?: string;
+  screenshots?: ProjectScreenshot[];
   caseStudy: ProjectCaseStudy;
 }
 
@@ -534,6 +545,52 @@ export const projectsData: Project[] = [
     accentColor: "#00F0FF",
     githubUrl: "https://github.com/praveeny5117",
     demoUrl: "https://github.com/praveeny5117",
+    primaryImage: "/school-erp/admin-dashboard.png",
+    screenshots: [
+      {
+        url: "/school-erp/admin-dashboard.png",
+        title: "Smart School Executive Dashboard",
+        category: "Executive Overview",
+        caption: "Real-time student & faculty attendance tracking, class presence breakdown, weekly attendance trends, and financial insights with ₹14.79L overall revenue tracking.",
+        isPrimary: true,
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/school-erp/students-directory.png",
+        title: "Students Directory & Appearance Customizer",
+        category: "Directory & Settings",
+        caption: "Complete 404 active student roster with admission IDs, guardian details, quick search, export actions, and real-time visual theme selection (Ocean Blue, Light, Dark, Teal, Premium Purple).",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/school-erp/class-roster-attendance.png",
+        title: "Class Roster & Dual-Session Attendance",
+        category: "Daily Operations",
+        caption: "Interactive student attendance roster supporting Sunrisers and Sundown sessions, absentee logging, real-time presence indicators, and batch finalization.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/school-erp/student-portal.png",
+        title: "Student & Guardian Personal Portal",
+        category: "Student Portal",
+        caption: "Individual student portal (Alexander Wright) showcasing 96.4% attendance rate, zero due fee balance, academic session status, class rank #3, and one-click student services.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/school-erp/academic-reports.png",
+        title: "Academic Reports & Class Performance Analytics",
+        category: "Reports & Analytics",
+        caption: "Multi-variable analytics comparing class attendance vs. pass rates vs. average marks, top performers identification, and one-click PDF export.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/school-erp/examinations-results.png",
+        title: "Examinations & Grading Management",
+        category: "Exams & Grading",
+        caption: "Centralized exam scheduler, date tracking, maximum marks threshold, grading status, and student score entry workflows.",
+        aspectRatio: "desktop"
+      }
+    ],
     caseStudy: {
       overview: "Smart School ERP is a multi-tenant School Management SaaS platform engineered to consolidate academic workflows across multiple school organizations. Each institution operates in an isolated tenant context with granular RBAC permissions spanning Super Admins, School Principals, Teachers, Accountants, and Parents. Modules include student/staff records, automated fee schedules with Razorpay, instant SMS/WhatsApp alerts, transport routes, hostel assignments, library cataloging, and AWS S3-backed document vaults.",
       problem: "Traditional academic management software suffered from fragmented record-keeping across disparate tools, manual fee reconciliation prone to human error, slow report generation for large student bodies (10,000+ records), and severe security risks regarding cross-institution data isolation.",
@@ -627,6 +684,73 @@ export const projectsData: Project[] = [
     accentColor: "#A855F7",
     githubUrl: "https://github.com/praveeny5117",
     demoUrl: "https://github.com/praveeny5117",
+    primaryImage: "/orderme/kitchen-kds.png",
+    screenshots: [
+      {
+        url: "/orderme/kitchen-kds.png",
+        title: "Kitchen Central Real-Time Order Monitor (KDS)",
+        category: "Kitchen KDS",
+        caption: "Live kitchen display system (KDS) receiving guest table orders instantly via WebSockets, with dish quantities, live feed counters, and instant kitchen order acceptance.",
+        isPrimary: true,
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/orderme/mobile-menu.jpg",
+        title: "Guest Mobile Menu & Gourmet Selection",
+        category: "Guest Mobile App",
+        caption: "Mobile-responsive QR customer ordering interface displaying culinary categories, food imagery, price tags, and cart status directly on guest mobile browsers.",
+        aspectRatio: "mobile"
+      },
+      {
+        url: "/orderme/mobile-dish-detail.jpg",
+        title: "Interactive Dish Detail & Customization Modal",
+        category: "Guest Mobile App",
+        caption: "Rich dish carousel with high-res food photography, pricing, ingredients, description, and direct Add to Cart action.",
+        aspectRatio: "mobile"
+      },
+      {
+        url: "/orderme/mobile-order-summary.jpg",
+        title: "Cart Review & Table Verification",
+        category: "Guest Mobile App",
+        caption: "Instant order summary with itemized pricing, transparent zero-service-fee policy, detected table number (Table 1), and one-tap order confirmation.",
+        aspectRatio: "mobile"
+      },
+      {
+        url: "/orderme/mobile-order-placed.jpg",
+        title: "Real-Time Order Confirmation & Broadcast",
+        category: "Guest Mobile App",
+        caption: "Instant visual confirmation of order (#D1C3A4) streamed to kitchen stations with live preparation status alerts.",
+        aspectRatio: "mobile"
+      },
+      {
+        url: "/orderme/mobile-order-status.jpg",
+        title: "Live Preparation Tracker & Bill Summary",
+        category: "Guest Mobile App",
+        caption: "Second-by-second guest tracking screen with order ID (#D1C3BE), preparation status, tax calculation, and digital Pay Now checkout.",
+        aspectRatio: "mobile"
+      },
+      {
+        url: "/orderme/table-qr-setup.png",
+        title: "Table Configuration & Dynamic QR Code Engine",
+        category: "Admin & Setup",
+        caption: "Multi-table management system generating cryptographic table-specific QR codes with instant print layout for restaurant tables and room placements.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/orderme/sales-revenue-ledger.png",
+        title: "Sales Revenue Ledger & Historical Performance",
+        category: "Accounting",
+        caption: "Comprehensive restaurant sales audit trail recording order IDs, table numbers, timestamps, item counts, and net revenue summaries.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/orderme/pos-receipt-print.png",
+        title: "Automated POS Thermal Receipt Generation",
+        category: "POS & Printing",
+        caption: "Pixel-perfect thermal print receipt formatting with unique Bill ID, table reference, itemized subtotal, CGST/SGST tax breakdown, and ledger copy.",
+        aspectRatio: "receipt"
+      }
+    ],
     caseStudy: {
       overview: "OrderMe is a full-featured hotel operations platform created to streamline high-volume guest requests and in-room dining across luxury hotels and resort properties. It connects guest digital ordering (in-room QR or table dining), kitchen display systems (KDS), housekeeping dispatch, and front-desk billing into a synchronized real-time workflow.",
       problem: "Traditional hotel room service relied on phone intercoms and manual paper chits, resulting in misplaced orders, slow kitchen turnaround during peak dining hours, untracked housekeeping requests, and zero accountability during guest invoice disputes.",
@@ -719,6 +843,66 @@ export const projectsData: Project[] = [
     accentColor: "#10B981",
     githubUrl: "https://github.com/praveeny5117",
     demoUrl: "https://github.com/praveeny5117",
+    primaryImage: "/hospital/executive-dashboard.png",
+    screenshots: [
+      {
+        url: "/hospital/executive-dashboard.png",
+        title: "ApexCare Executive Hospital Operations Dashboard",
+        category: "Executive Dashboard",
+        caption: "High-level operational cockpit displaying live patient flow pipeline (Reception ➔ Doctor ➔ Pharmacy ➔ Billing ➔ Completed), department workloads, and revenue metrics.",
+        isPrimary: true,
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/hospital/reception-triage.png",
+        title: "Reception Live Token & Triage Board",
+        category: "Reception & Triage",
+        caption: "Real-time patient intake desk managing token issuance, waiting queue status, doctor assignment, and live encounter transitions.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/hospital/pharmacy-desk.png",
+        title: "Pharmacy Dispensing Queue (Live Socket Feed)",
+        category: "Pharmacy Desk",
+        caption: "Real-time pharmacy queue powered by WebSockets, receiving doctor prescriptions instantly with patient info, doctor name, and dispense action.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/hospital/billing.png",
+        title: "Doctor Prescription & Atomic Inventory Allocation",
+        category: "Prescriptions & Billing",
+        caption: "Doctor prescription fulfillment with batch allocation (FEFO/FIFO), unit pricing, GST calculation, and guaranteed atomic MongoDB stock deduction safety.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/hospital/medicine-inventory.png",
+        title: "Pharmacy Inventory Master & Stock Management",
+        category: "Inventory Master",
+        caption: "Comprehensive drug catalog with generic formulations, manufacturer info, dosage forms, current stock counters, selling prices, and batch tracking.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/hospital/departments.png",
+        title: "Clinical Departments & Wards Directory",
+        category: "Departments",
+        caption: "Hospital organizational structure managing cardiology, dermatology, consultation chambers, bed capacities, and consultant assignments.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/hospital/branches-governance.png",
+        title: "Multi-Hospital Enterprise Governance (Super Admin)",
+        category: "Enterprise Admin",
+        caption: "Super Admin master dashboard spanning multi-tenant hospital branches (Apex Multi-Specialty Mumbai, Metro City Bengaluru), doctor rosters, and network financials.",
+        aspectRatio: "desktop"
+      },
+      {
+        url: "/hospital/invoices.png",
+        title: "Invoices & Receipts Financial Ledger",
+        category: "Financial Ledger",
+        caption: "Tamper-evident billing ledger documenting consultation and medication charges, GST tax subtotals, paid status, and print-ready receipts.",
+        aspectRatio: "desktop"
+      }
+    ],
     caseStudy: {
       overview: "The Hospital Management System is a comprehensive clinical workflow prototype engineered to illustrate how fragmented hospital departments can be unified into a synchronized digital pipeline. It covers patient registration, token queue management, doctor consultation desks with diagnosis notes, digital prescription routing, atomic pharmacy inventory dispensation, and consolidated billing.",
       problem: "Traditional hospital setups with disconnected software lead to long patient wait times, prescription handwriting errors, stock leakage in pharmacies, and delayed checkout reconciliation.",
